@@ -117,9 +117,9 @@
       "univers": "la-griffe-noire",
       "resume": "Capitaine de La Griffe Noire, responsable de son équipage.",
       "description": "À l’arrivée sur L’Arche, Oser observe les quais avec l’attention d’un tacticien. Il fixe les rendez-vous de son second et charge Orann Vorlag de trouver un deuxième psypilote avant le prochain départ.",
-      "image": "",
-      "referenceVisuelle": "planche-05a-ombres",
-      "contexteVisuel": "Liam Oser figure dans cette scène d’équipage avec Perll et Vorlag ; il ne s’agit pas d’un portrait isolé.",
+      "image": "assets/images/personnages/oser-service.png",
+      "referenceVisuelle": "fiche-individuelle-oser",
+      "contexteVisuel": "Référence individuelle de Liam Oser, capitaine de La Griffe Noire : tenue à bord, avec une seconde vue en tenue au sol dans l'atlas Personnages.",
       "publie": true
     },
     {
@@ -129,9 +129,9 @@
       "univers": "la-griffe-noire",
       "resume": "Second de La Griffe Noire, vétéran doté de nombreux perfectionnements corporels.",
       "description": "Perll accompagne Oser sur le quai. Sous son manteau de svorack, son sidrill dessine une silhouette largement renforcée. Des recrues le surnomment parfois « Humanbot », mais son expérience au combat inspire le respect.",
-      "image": "",
-      "referenceVisuelle": "planche-05a-ombres",
-      "contexteVisuel": "Avrose Perll figure dans cette scène d’équipage avec Oser et Vorlag ; il ne s’agit pas d’un portrait isolé.",
+      "image": "assets/images/personnages/perll.png",
+      "referenceVisuelle": "fiche-individuelle-perll",
+      "contexteVisuel": "Feuille de modèle définitive validée d’Avrose Perll. Œil mécanique bleu : anatomiquement à droite.",
       "publie": true
     },
     {
@@ -141,9 +141,9 @@
       "univers": "la-griffe-noire",
       "resume": "Psypilote vétéran de La Griffe Noire.",
       "description": "Vorlag accompagne Oser et Perll lors de leur débarquement sur L’Arche. Chargé de recruter un second psypilote, il gagne les niveaux administratifs de la station avec son calme habituel.",
-      "image": "",
-      "referenceVisuelle": "planche-05a-ombres",
-      "contexteVisuel": "Orann Vorlag figure dans cette scène d’équipage avec Oser et Perll ; il ne s’agit pas d’un portrait isolé.",
+      "image": "assets/images/personnages/vorlag.png",
+      "referenceVisuelle": "fiche-individuelle-vorlag",
+      "contexteVisuel": "Feuille individuelle canonique d’Orann Vorlag, avec ses vues de référence.",
       "publie": true
     }
   ],
