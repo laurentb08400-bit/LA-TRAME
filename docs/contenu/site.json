@@ -1,0 +1,52 @@
+{
+  "site": {
+    "titre": "LA TRAME",
+    "sousTitre": "Visions d’Univers",
+    "signature": "Un atelier d’univers en devenir",
+    "accroche": "Les mondes prennent forme, page après page.",
+    "introduction": "La Trame ouvre les portes de ses univers : récits, bandes dessinées, recherches graphiques et étapes de création. Découvrez dès aujourd’hui les premiers extraits de Vision d’Univers — La Griffe Noire, puis suivez les nouvelles publications au fil de l’écriture.",
+    "imageAccueil": ""
+  },
+  "univers": [
+    {
+      "id": "la-griffe-noire",
+      "titre": "La Griffe Noire",
+      "surtitre": "VISION D’UNIVERS · TOME 1",
+      "resume": "Premier tome de Vision d’Univers, La Griffe Noire prend forme à travers un roman et son adaptation en bande dessinée. Le projet conserve ses textes fondateurs et évolue au fil des versions validées.",
+      "presentation": "Vaisseau des origines, La Griffe Noire s’amarre à L’Arche, cité orbitale héritée d’une civilisation ancienne. Les premiers extraits de l’édition canonique V0.16 sont accessibles dans la bibliothèque. Une adaptation en bande dessinée est également en développement.",
+      "image": "",
+      "etat": "Roman en cours · Bande dessinée en développement",
+      "publie": true
+    }
+  ],
+  "visuels": [],
+  "encyclopedie": [],
+  "extraits": [
+    {
+      "id": "prologue-un",
+      "titre": "Prologue — UN",
+      "univers": "la-griffe-noire",
+      "type": "ROMAN · V0.16",
+      "texte": "Un était entier.\nIl n'y avait ni quand.\nNi où.\nUn.\nPuis un frémissement.\nUn effleurement.\nUne palpitation.\nLe frémissement grandit.\nGonfla.\nVibra.\nDevint marée.\nUn céda.",
+      "publie": true
+    },
+    {
+      "id": "griffe-arrivee",
+      "titre": "La Griffe Noire arrive à L’Arche",
+      "univers": "la-griffe-noire",
+      "type": "ROMAN · V0.16",
+      "texte": "La Griffe Noire venait de s'amarrer à l'Arche. Un kilomètre huit cent cinquante de carbogel noir reposait contre les champs d'appontage comme une lame déposée au bord d'une ville. Et l'Arche était bien une ville. Elle tournait sur une orbite proche d'Eliama, troisième planète terraformée du système de Cronn. Depuis les baies extérieures, la planète emplissait parfois la moitié du ciel : océans sombres, continents neufs et nappes de nuages encore trop blanches pour sembler tout à fait naturelles.",
+      "publie": true
+    }
+  ],
+  "journal": [
+    {
+      "id": "publication-inaugurale",
+      "date": "2026-10-20",
+      "titre": "Ouverture de la bibliothèque",
+      "type": "PUBLICATION",
+      "texte": "La bibliothèque accueille ses premiers passages de la V0.16 canonique : le prologue UN et l’arrivée de La Griffe Noire à L’Arche. La présentation et les galeries évolueront au fil du travail et des nouvelles publications.",
+      "publie": true
+    }
+  ]
+}
