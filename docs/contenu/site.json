@@ -19,7 +19,35 @@
       "publie": true
     }
   ],
-  "visuels": [],
+  "visuels": [
+    {
+      "titre": "L’Arche — planche 01",
+      "univers": "la-griffe-noire",
+      "id": "planche-01-arche",
+      "legende": "Planche canonique harmonisée : l’arrivée de La Griffe Noire, la mégastation L’Arche et les quatre grandes structures de l’univers connu.",
+      "fichier": "assets/images/planche-01-l-arche.png",
+      "alt": "Bande dessinée spatiale en trois registres : La Griffe Noire s’approche de L’Arche, station géante près d’Eliama.",
+      "publie": true
+    },
+    {
+      "titre": "Les Trois Ombres — planche 05A",
+      "univers": "la-griffe-noire",
+      "id": "planche-05a-ombres",
+      "legende": "Oser, Perll et Vorlag descendent sur les pontons de L’Arche, au milieu des équipages et des voyageurs.",
+      "fichier": "assets/images/planche-05a-les-trois-ombres.png",
+      "alt": "Bande dessinée des trois membres d’équipage descendant vers les quais animés de L’Arche.",
+      "publie": true
+    },
+    {
+      "titre": "Prépare la Griffe — planche 20",
+      "univers": "la-griffe-noire",
+      "id": "planche-20-prepare-griffe",
+      "legende": "Une séquence canonique ultérieure de la BD. Attention : cette planche dévoile un événement de l’intrigue.",
+      "fichier": "assets/images/planche-20-prepare-la-griffe.png",
+      "alt": "Planche de bande dessinée où deux membres de l’équipage échangent devant une interface holographique.",
+      "publie": true
+    }
+  ],
   "encyclopedie": [
     {
       "id": "arche",
@@ -121,6 +149,14 @@
     }
   ],
   "journal": [
+    {
+      "id": "planches-canoniques-2026-10-20",
+      "date": "2026-10-20",
+      "titre": "Trois planches canoniques rejoignent la galerie",
+      "type": "GALERIE",
+      "texte": "L’Arche (01), Les Trois Ombres (05A) et Prépare la Griffe (20) sont désormais visibles en grand format dans l’atlas graphique de La Griffe Noire. La planche 20 dévoile un épisode plus avancé du récit.",
+      "publie": true
+    },
     {
       "id": "atelier-encyclopedie-20261020",
       "date": "2026-10-20",
