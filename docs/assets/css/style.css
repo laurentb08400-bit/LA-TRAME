@@ -80,3 +80,121 @@
 .visual-spoiler-cover>span:not(.visual-spoiler-mark):not(.visual-spoiler-action){max-width:260px;font-size:12px;line-height:1.7;color:#b9c1ba}
 .visual-spoiler-action{font-size:11px;font-weight:650;letter-spacing:.04em;color:var(--gold);border-bottom:1px solid rgba(212,177,138,.6);padding-bottom:6px}
 .visual-card.visual-spoiler:hover,.visual-card.visual-spoiler:focus-visible{border-color:#f3d1a6;outline-offset:3px}
+
+/* La Trame V0.4 — immersion canonique.
+   Planches 01 et 05A utilisées sans modification de leurs fichiers.
+   La planche 20 reste exclusivement dans la galerie protégée. */
+.hero-canon-backdrop{
+  position:absolute;
+  z-index:0;
+  inset:0 0 0 30%;
+  overflow:hidden;
+  pointer-events:none;
+  background:#090c10;
+}
+.hero-canon-backdrop img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:73% 0%;
+  transform:scale(1.24);
+  transform-origin:76% 0%;
+}
+.hero-canon-backdrop::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,#090b0d 0%,rgba(9,11,13,.91) 20%,rgba(9,11,13,.57) 49%,rgba(9,11,13,.17) 100%),
+    linear-gradient(0deg,#090b0d 0%,rgba(9,11,13,.22) 31%,transparent 75%),
+    linear-gradient(180deg,rgba(9,11,13,.45),transparent 30%);
+}
+.hero-canon-ref{
+  position:absolute;
+  z-index:1;
+  right:clamp(24px,5vw,100px);
+  bottom:83px;
+  padding:9px 12px;
+  border:1px solid rgba(226,190,137,.42);
+  background:rgba(8,13,16,.86);
+  color:#e5cfad;
+  font-size:9px;
+  font-weight:650;
+  letter-spacing:.16em;
+}
+.hero-description{text-shadow:0 2px 12px rgba(0,0,0,.65)}
+.universe-card.with-image{
+  border-color:rgba(212,177,138,.4);
+  background:#101819;
+}
+.universe-card.with-image::before{
+  background-position:50% 45%;
+  opacity:.55;
+}
+.universe-card.with-image::after{
+  background:linear-gradient(0deg,rgba(5,9,11,.98) 0%,rgba(5,9,11,.76) 43%,rgba(5,9,11,.22) 100%);
+}
+.universe-card.with-image .card-bottom h3{
+  color:#f4eee5;
+  text-shadow:0 2px 12px rgba(0,0,0,.7);
+}
+.atlas-preview{
+  background:#0d1518;
+  border-color:rgba(212,177,138,.43);
+  box-shadow:0 20px 65px rgba(0,0,0,.25);
+}
+.atlas-canon-visual{
+  min-width:0;
+  min-height:340px;
+  margin:0;
+  position:relative;
+  overflow:hidden;
+  border-right:1px solid rgba(212,177,138,.23);
+  background:#080e11;
+}
+.atlas-canon-visual img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:73% 0%;
+  transform:scale(1.43);
+  transform-origin:75% 0%;
+}
+.atlas-canon-visual::after{
+  content:"";
+  position:absolute;
+  inset:40% 0 0;
+  pointer-events:none;
+  background:linear-gradient(0deg,rgba(4,8,10,.9),transparent);
+}
+.atlas-canon-visual figcaption{
+  position:absolute;
+  z-index:1;
+  bottom:24px;
+  left:24px;
+  right:24px;
+  color:#f3dfc1;
+  font-size:10px;
+  font-weight:650;
+  letter-spacing:.13em;
+  line-height:1.6;
+}
+.atlas-copy{background:radial-gradient(ellipse at 100% 0%,rgba(166,120,67,.1),transparent 55%)}
+@media(max-width:960px){
+  .hero-canon-backdrop{inset:0 0 0 22%}
+}
+@media(max-width:680px){
+  .hero-canon-backdrop{inset:74px 0 19% 0}
+  .hero-canon-backdrop img{object-position:71% 0%;transform:scale(1.28);transform-origin:74% 0%}
+  .hero-canon-backdrop::after{
+    background:
+      linear-gradient(90deg,rgba(9,11,13,.91),rgba(9,11,13,.73) 61%,rgba(9,11,13,.34)),
+      linear-gradient(0deg,#090b0d,transparent 50%),
+      linear-gradient(180deg,rgba(9,11,13,.6),transparent 32%);
+  }
+  .hero-canon-ref{bottom:12px;right:14px;font-size:8px;max-width:80%;text-align:right}
+  .atlas-canon-visual{min-height:240px;border-right:0;border-bottom:1px solid rgba(212,177,138,.23)}
+  .atlas-canon-visual figcaption{bottom:16px;left:17px;right:17px;font-size:9px}
+}
