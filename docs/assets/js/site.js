@@ -53,6 +53,7 @@ function renderEncyclopedia(data,worlds){
  // Seules les planches canoniques déjà publiques et sans divulgâchage peuvent illustrer les fiches.
  const allowedReferences=new Set(['planche-01-arche','planche-05a-ombres']);
  const references=new Map(byPublished(data.visuels).filter(v=>allowedReferences.has(v.id)&&v.spoiler!==true&&safeImagePath(v.fichier)).map(v=>[v.id,v]));
+ const getPortrait=item=>(item.categorie==='personnage'?(window.LA_TRAME_PORTRAITS||{})[item.id]||'':'');
  const getReference=item=>{
   const ref=references.get(item.referenceVisuelle);
   return ref&&ref.univers===item.univers?ref:null;
@@ -61,14 +62,14 @@ function renderEncyclopedia(data,worlds){
  let category='tous';
  const normalise=value=>String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
  function openEntry(item){
-  const dialog=$('universe-dialog'),content=$('dialog-content'),reference=getReference(item);
+  const dialog=$('universe-dialog'),content=$('dialog-content'),portrait=getPortrait(item),reference=portrait?null:getReference(item);
   content.replaceChildren();
-  if(reference){
+  if(portrait||reference){
    const figure=element('figure','detail-hero encyclopedia-detail-visual');
    const picture=element('img');
-   picture.src=safeImagePath(reference.fichier);
-   picture.alt='Planche de contexte canonique : '+reference.titre+'.';
-   const caption=element('figcaption','encyclopedia-source-caption','DOCUMENT CANONIQUE · '+reference.titre);
+   picture.src=portrait||safeImagePath(reference.fichier);
+   picture.alt=portrait?'Feuille individuelle de '+item.titre:'Planche de contexte canonique : '+reference.titre+'.';
+   const caption=element('figcaption','encyclopedia-source-caption',portrait?'FICHE INDIVIDUELLE · '+item.titre:'DOCUMENT CANONIQUE · '+reference.titre);
    figure.append(picture,caption);
    content.append(figure);
   }
@@ -76,6 +77,13 @@ function renderEncyclopedia(data,worlds){
   body.append(element('span','section-index',encyclopediaTypes[item.categorie]+' · '+world.titre),element('h2','',item.titre));
   if(item.resume)body.append(element('p','',item.resume));
   if(item.description)body.append(element('p','',item.description));
+  if(portrait){
+   body.append(element('p','encyclopedia-reference-note','Portrait et tenues issus de la feuille de modèle du personnage, distincts des scènes de groupe.'));
+   const link=element('a','encyclopedia-source-link','Voir la fiche de conception dans l’atlas ↗');
+   link.href='personnages/';
+   link.addEventListener('click',()=>dialog.close());
+   body.append(link);
+  }
   if(reference){
    body.append(element('p','encyclopedia-reference-note',item.contexteVisuel||'Illustration de contexte tirée de la bande dessinée canonique.'));
    const link=element('a','encyclopedia-source-link','Voir la planche complète dans la galerie ↗');
@@ -100,21 +108,21 @@ function renderEncyclopedia(data,worlds){
    return;
   }
   for(const item of visible){
-   const world=worlds.find(w=>w.id===item.univers),reference=getReference(item),button=element('button','encyclopedia-card');
+   const world=worlds.find(w=>w.id===item.univers),portrait=getPortrait(item),reference=portrait?null:getReference(item),button=element('button','encyclopedia-card');
    button.type='button';
    button.setAttribute('aria-label','Consulter la fiche '+item.titre);
-   if(reference){
+   if(portrait||reference){
     const media=element('div','encyclopedia-card-media'),picture=element('img');
-    picture.src=safeImagePath(reference.fichier);
+    picture.src=portrait||safeImagePath(reference.fichier);
     picture.alt='';
     picture.loading='lazy';
-    const sourceLabel=element('span','encyclopedia-card-source',item.referenceVisuelle==='planche-01-arche'?'PLANCHE 01 · L’ARCHE':'PLANCHE 05A · SCÈNE COLLECTIVE');
+    const sourceLabel=element('span','encyclopedia-card-source',portrait?'FICHE PERSONNAGE · '+item.titre:(item.referenceVisuelle==='planche-01-arche'?'PLANCHE 01 · L’ARCHE':'PLANCHE 05A · SCÈNE COLLECTIVE'));
     media.append(picture,sourceLabel);
     button.append(media);
    }
    const content=element('div','encyclopedia-card-content');
    content.append(element('small','',encyclopediaTypes[item.categorie]),element('strong','',item.titre),element('span','',item.resume||'Présentation publique à découvrir'));
-   if(reference)content.append(element('span','encyclopedia-card-context','Illustration de contexte issue d’une planche validée'));
+   if(portrait||reference)content.append(element('span','encyclopedia-card-context',portrait?'Feuille individuelle du personnage':'Illustration de contexte issue d’une planche validée'));
    content.append(element('em','',world.titre+' ↗'));
    button.append(content);
    button.addEventListener('click',()=>openEntry(item));
