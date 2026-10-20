@@ -22,7 +22,7 @@ function renderEncyclopedia(data,worlds){
   body.append(element('span','section-index',encyclopediaTypes[item.categorie]+' · '+world.titre),element('h2','',item.titre));
   if(item.resume)body.append(element('p','',item.resume));
   if(item.description)body.append(element('p','',item.description));
-  body.append(element('p','note','Fiche affichée avec autorisation. Ne placez jamais d’archives privées dans les fichiers du site.'));
+  body.append(element('p','note','Repère de lecture tiré du début de La Griffe Noire, édition canonique V0.16.'));
   content.append(hero,body);dialog.showModal();
  }
  function draw(){
