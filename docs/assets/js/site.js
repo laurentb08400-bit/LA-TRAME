@@ -54,6 +54,11 @@ function renderEncyclopedia(data,worlds){
  const allowedReferences=new Set(['planche-01-arche','planche-05a-ombres']);
  const references=new Map(byPublished(data.visuels).filter(v=>allowedReferences.has(v.id)&&v.spoiler!==true&&safeImagePath(v.fichier)).map(v=>[v.id,v]));
  const getReference=item=>{
+  // Portraits individuels approuvés : ne pas utiliser la scène collective 05A.
+  const portraitPaths={oser:'assets/images/personnages/oser-service.png',perll:'assets/images/personnages/perll.png',vorlag:'assets/images/personnages/vorlag.png'};
+  if(item.categorie==='personnage'&&Object.hasOwn(portraitPaths,item.id)&&item.image===portraitPaths[item.id]){
+   return {fichier:portraitPaths[item.id],titre:'Fiche de conception · '+item.titre,estPortrait:true};
+  }
   const ref=references.get(item.referenceVisuelle);
   return ref&&ref.univers===item.univers?ref:null;
  };
@@ -67,8 +72,8 @@ function renderEncyclopedia(data,worlds){
    const figure=element('figure','detail-hero encyclopedia-detail-visual');
    const picture=element('img');
    picture.src=safeImagePath(reference.fichier);
-   picture.alt='Planche de contexte canonique : '+reference.titre+'.';
-   const caption=element('figcaption','encyclopedia-source-caption','DOCUMENT CANONIQUE · '+reference.titre);
+   picture.alt=reference.estPortrait?'Portrait et feuille de modèle de '+item.titre:'Planche de contexte canonique : '+reference.titre+'.';
+   const caption=element('figcaption','encyclopedia-source-caption',(reference.estPortrait?'FICHE INDIVIDUELLE · ':'DOCUMENT CANONIQUE · ')+reference.titre);
    figure.append(picture,caption);
    content.append(figure);
   }
@@ -78,8 +83,8 @@ function renderEncyclopedia(data,worlds){
   if(item.description)body.append(element('p','',item.description));
   if(reference){
    body.append(element('p','encyclopedia-reference-note',item.contexteVisuel||'Illustration de contexte tirée de la bande dessinée canonique.'));
-   const link=element('a','encyclopedia-source-link','Voir la planche complète dans la galerie ↗');
-   link.href='#galerie';
+   const link=element('a','encyclopedia-source-link',reference.estPortrait?'Voir les fiches de conception et les tenues ↗':'Voir la planche complète dans la galerie ↗');
+   link.href=reference.estPortrait?'personnages/':'#galerie';
    link.addEventListener('click',()=>dialog.close());
    body.append(link);
   }
@@ -108,13 +113,13 @@ function renderEncyclopedia(data,worlds){
     picture.src=safeImagePath(reference.fichier);
     picture.alt='';
     picture.loading='lazy';
-    const sourceLabel=element('span','encyclopedia-card-source',item.referenceVisuelle==='planche-01-arche'?'PLANCHE 01 · L’ARCHE':'PLANCHE 05A · SCÈNE COLLECTIVE');
+    const sourceLabel=element('span','encyclopedia-card-source',reference.estPortrait?'FICHE CANONIQUE · '+item.titre:(item.referenceVisuelle==='planche-01-arche'?'PLANCHE 01 · L’ARCHE':'PLANCHE 05A · SCÈNE COLLECTIVE'));
     media.append(picture,sourceLabel);
     button.append(media);
    }
    const content=element('div','encyclopedia-card-content');
    content.append(element('small','',encyclopediaTypes[item.categorie]),element('strong','',item.titre),element('span','',item.resume||'Présentation publique à découvrir'));
-   if(reference)content.append(element('span','encyclopedia-card-context','Illustration de contexte issue d’une planche validée'));
+   if(reference)content.append(element('span','encyclopedia-card-context',reference.estPortrait?'Illustration individuelle de conception':'Illustration de contexte issue d’une planche validée'));
    content.append(element('em','',world.titre+' ↗'));
    button.append(content);
    button.addEventListener('click',()=>openEntry(item));
