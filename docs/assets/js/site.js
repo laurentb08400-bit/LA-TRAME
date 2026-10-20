@@ -6,7 +6,46 @@ function safeImagePath(path){if(typeof path!=='string')return '';if(!/^assets\/i
 function emptyState(title,message){const box=element('div','empty-state');box.append(element('span','empty-symbol','✳'),element('strong','',title),element('p','',message));return box;}
 function createCard(universe,index){const card=element('article','universe-card');if(universe.image && safeImagePath(universe.image)){card.classList.add('with-image');card.style.setProperty('--cover-image',`url("${safeImagePath(universe.image)}")`);}const kicker=element('div','card-kicker');kicker.append(element('span','',universe.surtitre||'UNIVERS'),element('span','',String(index+1).padStart(2,'0')));const bottom=element('div','card-bottom'),title=element('h3','',universe.titre),desc=element('p','',universe.resume),btn=element('button','','Entrer dans cet univers ↗');btn.type='button';btn.addEventListener('click',()=>openUniverse(universe));bottom.append(title,desc,btn);card.append(kicker,bottom);return card;}
 function openUniverse(item){const d=$('universe-dialog'),content=$('dialog-content');content.replaceChildren();const hero=element('div','detail-hero');const img=safeImagePath(item.image);if(img){const picture=element('img');picture.src=img;picture.alt='Illustration de '+item.titre;hero.append(picture);}else hero.textContent='✳';const main=element('div','detail-body');main.append(element('span','section-index',item.surtitre||'UNIVERS'),element('h2','',item.titre),element('p','',item.resume||''),element('p','',item.presentation||''),element('p','note','Publication contrôlée : les brouillons et les documents privés ne sont pas diffusés.'));content.append(hero,main);d.showModal();}
-function createVisual(item){const path=safeImagePath(item.fichier);if(!path)return null;const btn=element('button','visual-card');btn.type='button';const img=element('img');img.src=path;img.alt=item.alt||item.titre;img.loading='lazy';const metadata=element('div','visual-meta');metadata.append(element('small','',item.univers||'UNIVERS'),element('strong','',item.titre||'Sans titre'));btn.append(img,metadata);btn.addEventListener('click',()=>{const lightbox=$('lightbox');$('lightbox-image').src=path;$('lightbox-image').alt=item.alt||item.titre;$('lightbox-caption').textContent=item.legende||item.titre;lightbox.showModal();});return btn;}
+function createVisual(item){
+  const path=safeImagePath(item.fichier);
+  if(!path)return null;
+  const btn=element('button','visual-card');
+  btn.type='button';
+  const metadata=element('div','visual-meta');
+  metadata.append(element('small','',item.univers||'UNIVERS'),element('strong','',item.titre||'Sans titre'));
+  function openVisual(){
+    const lightbox=$('lightbox');
+    $('lightbox-image').src=path;
+    $('lightbox-image').alt=item.alt||item.titre;
+    $('lightbox-caption').textContent=item.legende||item.titre;
+    lightbox.showModal();
+  }
+  function showThumbnail(){
+    const img=element('img');
+    img.src=path;
+    img.alt=item.alt||item.titre;
+    img.loading='lazy';
+    btn.replaceChildren(img,metadata);
+    btn.setAttribute('aria-label','Ouvrir '+(item.titre||'cette planche')+' en grand format');
+    btn.onclick=openVisual;
+  }
+  if(item.spoiler===true){
+    btn.classList.add('visual-spoiler');
+    btn.setAttribute('aria-label','Révéler '+(item.titre||'cette planche')+' : contient des révélations sur l’intrigue');
+    const cover=element('div','visual-spoiler-cover');
+    cover.append(
+      element('span','visual-spoiler-mark','◈'),
+      element('strong','','Attention : révélations'),
+      element('span','','Cette planche dévoile une scène plus avancée du récit.'),
+      element('span','visual-spoiler-action','Afficher volontairement la planche ↗')
+    );
+    btn.append(cover);
+    btn.onclick=()=>{btn.classList.remove('visual-spoiler');showThumbnail();};
+  }else{
+    showThumbnail();
+  }
+  return btn;
+}
 function drawGallery(data,selected='tous'){const gallery=$('gallery-list');gallery.replaceChildren();const candidates=byPublished(data.visuels).filter(x=>safeImagePath(x.fichier));const included=selected==='tous'?candidates:candidates.filter(x=>x.univers===selected);if(!included.length){gallery.append(emptyState('Galerie en préparation','Ajoutez un visuel validé depuis l’atelier local : il apparaîtra ici, avec son titre et sa légende.'));return;}included.forEach(item=>{const card=createVisual(item);if(card)gallery.append(card);});}
 const encyclopediaTypes={personnage:'Personnages',lieu:'Lieux',repere:'Repères'};
 function renderEncyclopedia(data,worlds){
