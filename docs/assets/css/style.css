@@ -57,3 +57,26 @@
 .atlas-copy p{font-size:13px;line-height:1.85;color:#b9c9c1;max-width:420px;margin:0}
 .atlas-copy small{margin-top:10px;color:#91a19b;font-size:10px;line-height:1.6}
 @media(max-width:780px){.atlas-preview{grid-template-columns:1fr}.atlas-orbit{min-height:220px}.atlas-copy{padding:30px 25px 38px}.atlas-copy h3{font-size:38px}}
+
+/* La Trame V0.4 — voile anti-divulgâchage de la galerie */
+.visual-card.visual-spoiler{
+  background:radial-gradient(circle at 50% 22%,rgba(159,128,93,.15),transparent 48%),linear-gradient(145deg,#182121,#0b0e10);
+  border:1px solid rgba(212,177,138,.48);
+}
+.visual-spoiler-cover{
+  min-height:330px;
+  width:100%;
+  padding:38px 24px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+  text-align:center;
+  color:#ddd5c8;
+}
+.visual-spoiler-mark{font:42px Georgia,serif;color:var(--gold)}
+.visual-spoiler-cover strong{font:normal 25px/1.2 Georgia,serif;color:#e8d3b4}
+.visual-spoiler-cover>span:not(.visual-spoiler-mark):not(.visual-spoiler-action){max-width:260px;font-size:12px;line-height:1.7;color:#b9c1ba}
+.visual-spoiler-action{font-size:11px;font-weight:650;letter-spacing:.04em;color:var(--gold);border-bottom:1px solid rgba(212,177,138,.6);padding-bottom:6px}
+.visual-card.visual-spoiler:hover,.visual-card.visual-spoiler:focus-visible{border-color:#f3d1a6;outline-offset:3px}
