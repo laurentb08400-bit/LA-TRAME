@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0c0e">
+  <meta name="description" content="La Trame — Visions d’Univers : suivre la création de mondes, de visuels et de récits.">
+  <title>La Trame — Visions d’Univers</title>
+  <link rel="icon" href="assets/images/sigil.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/site.js" defer></script>
+</head>
+<body>
+  <a href="#contenu" class="skip-link">Aller au contenu</a>
+  <header class="site-header" id="haut">
+    <a class="brand" href="#haut" aria-label="La Trame, accueil">
+      <img src="assets/images/sigil.svg" width="34" height="34" alt="">
+      <span>LA TRAME <small>VISIONS D’UNIVERS</small></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation" aria-label="Ouvrir le menu">☰</button>
+    <nav id="navigation" aria-label="Navigation principale">
+      <a href="#univers">Univers</a>
+      <a href="#galerie">Galeries</a>
+      <a href="#encyclopedie">Encyclopédie</a>
+      <a href="#ecriture">Bibliothèque</a>
+      <a href="lectures.html">Lire les extraits</a>
+      <a href="#atelier">Atelier</a>
+      <a href="#journal">Journal</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-emphasis" href="#apropos">Le projet <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="contenu">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-orbit orbit-a" aria-hidden="true"></div>
+      <div class="hero-orbit orbit-b" aria-hidden="true"></div>
+      <div class="hero-content shell">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> PROJET NARRATIF & GRAPHIQUE <span class="eyebrow-number">01 / ∞</span></div>
+        <p class="hero-overline" id="hero-signature">Un atelier d’univers en devenir</p>
+        <h1 id="hero-title">LA <em>TRAME</em><span class="hero-title-line" aria-hidden="true"></span></h1>
+        <p class="hero-subtitle" id="hero-acroche">Les mondes prennent forme, page après page.</p>
+        <p class="hero-description" id="hero-intro"></p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#univers">Explorer les univers <span aria-hidden="true">↗</span></a>
+          <a class="btn btn-ghost" href="#journal">Suivre la création <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <div class="hero-aside" aria-hidden="true"><span>FRAGMENT 001</span><span>LE RÉCIT SE CONSTRUIT</span></div>
+      <div class="hero-bottom shell"><div><span class="small-glyph">✳</span> UNE ŒUVRE EN CONSTRUCTION</div><span>FAIRE DÉFILER ↓</span></div>
+    </section>
+
+    <section class="intro-band shell" id="apropos" aria-label="À propos du projet">
+      <p class="section-index">001 — LE PROJET</p>
+      <div class="intro-band-content"><p>Explorer. Écrire.<br><i>Donner forme à l’invisible.</i></p><span>La Trame rassemble la matière d’une création en mouvement : univers, images et récits. Chaque publication est une fenêtre ouverte sur l’atelier, sans révéler les archives privées.</span></div>
+    </section>
+
+    <section class="section shell" id="univers" aria-labelledby="univers-title">
+      <div class="section-head"><div><p class="section-index">002 — CARTOGRAPHIE</p><h2 id="univers-title">Des univers<br><em>à explorer.</em></h2></div><p>Chaque monde dispose de son propre espace. À mesure que le projet avance, les personnages, les lieux et les illustrations viennent enrichir la carte.</p></div>
+      <div id="universe-list" class="universe-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="section gallery-section" id="galerie" aria-labelledby="gallery-title">
+      <div class="shell"><div class="section-head"><div><p class="section-index">003 — ATLAS VISUEL</p><h2 id="gallery-title">Fragments<br><em>d’univers.</em></h2></div><p>Une galerie pour les recherches graphiques, les décors, les personnages et les planches dont la publication a été validée.</p></div>
+      <div class="filter-bar" id="gallery-filters" aria-label="Filtres de la galerie"></div>
+      <div class="gallery-grid" id="gallery-list" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section encyclopedia-section" id="encyclopedie" aria-labelledby="encyclopedia-title">
+      <div class="shell">
+        <div class="section-head">
+          <div><p class="section-index">004 — ARCHIVES OUVERTES</p><h2 id="encyclopedia-title">L’encyclopédie<br><em>des univers.</em></h2></div>
+          <p>Personnages, lieux et repères : des fiches pour explorer les mondes, uniquement lorsque leur contenu a été approuvé pour la découverte publique.</p>
+        </div>
+        <div class="encyclopedia-controls">
+          <div id="encyclopedia-categories" class="filter-bar encyclopedia-filters" aria-label="Catégories de l’encyclopédie"></div>
+          <label class="encyclopedia-search-label" for="encyclopedia-search">Rechercher une fiche
+            <input id="encyclopedia-search" type="search" placeholder="Titre, univers, mot-clé…" autocomplete="off">
+          </label>
+        </div>
+        <p id="encyclopedia-summary" class="encyclopedia-summary" role="status" aria-live="polite"></p>
+        <div id="encyclopedia-list" class="encyclopedia-grid" aria-live="polite"></div>
+        <p class="encyclopedia-note">Seules les fiches approuvées sont affichées. Aucun contenu confidentiel ne doit être placé dans les fichiers du site, même si sa publication est désactivée.</p>
+      </div>
+    </section>
+
+    <section class="section shell writing-section" id="ecriture" aria-labelledby="writing-title">
+      <div class="section-head"><div><p class="section-index">005 — L’ENCRE ET LE TEMPS</p><h2 id="writing-title">Bibliothèque<br><em>des récits.</em></h2></div><p>Extraits choisis, notes publiques et étapes d’écriture. Le lecteur observe la création sans accéder aux manuscrits de travail.</p></div>
+      <div id="writing-list" class="writing-list"></div>
+      <div class="process-strip"><span>UNE ŒUVRE SE DÉPLOIE</span><div class="process-steps"><span>01 — CONCEPTION</span><span>02 — ÉCRITURE</span><span>03 — PLANCHES</span><span>04 — PUBLICATION</span></div></div>
+    </section>
+
+    <section class="section shell" id="atelier" aria-labelledby="atelier-title">
+      <div class="section-head"><div><p class="section-index">006 — DANS LES COULISSES</p><h2 id="atelier-title">L’atelier<br><em>de création.</em></h2></div><p>Suivez les étapes de conception des univers, des textes et des illustrations. Seules les recherches sélectionnées pour le public apparaîtront ici.</p></div>
+      <div class="writing-list">
+        <article class="writing-card">
+          <span class="type-label">RECHERCHES ET PROCESSUS</span>
+          <h3>Du premier trait à l’univers</h3>
+          <p>Cette rubrique présentera des étapes de travail et des recherches graphiques choisies, sans dévoiler les archives privées du projet.</p>
+        </article>
+        <article class="writing-card">
+          <span class="type-label">PUBLICATIONS À VENIR</span>
+          <h3>Les coulisses de La Trame</h3>
+          <p>Des illustrations, extraits et études seront ajoutés au rythme de leur validation pour publication.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section journal-section" id="journal" aria-labelledby="journal-title"><div class="shell">
+      <div class="section-head"><div><p class="section-index">007 — CARNET DE BORD</p><h2 id="journal-title">Journal<br><em>de création.</em></h2></div><p>Une chronologie simple des avancées publiables : textes achevés, nouveaux visuels, évolutions de la BD et annonces.</p></div>
+      <div id="journal-list" class="journal-list"></div>
+    </div></section>
+
+    <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="shell">
+        <div class="section-head">
+          <div><p class="section-index">008 — INFORMATIONS</p><h2 id="contact-title">Au fil<br><em>de la Trame.</em></h2></div>
+          <p>La Trame est une œuvre narrative et graphique en construction. Cette vitrine présente uniquement les fragments que l’auteur a choisi de partager.</p>
+        </div>
+        <div class="contact-grid">
+          <article class="contact-card">
+            <p class="contact-kicker">01 / LE PROJET</p>
+            <h3>Un univers en devenir</h3>
+            <p>Les récits, les images et les pages évoluent au rythme de leur création. Le journal présente les étapes rendues publiques.</p>
+          </article>
+          <article class="contact-card">
+            <p class="contact-kicker">02 / TEXTES &amp; IMAGES</p>
+            <h3>Des créations à respecter</h3>
+            <p>Les textes et illustrations sont présentés pour la découverte du projet. Toute réutilisation nécessite l’accord préalable des titulaires des droits.</p>
+          </article>
+          <article class="contact-card">
+            <p class="contact-kicker">03 / ÉCHANGER</p>
+            <h3>Contact à venir</h3>
+            <p>Un moyen de contact dédié pourra être indiqué ici lorsqu’il aura été choisi et validé par l’auteur.</p>
+          </article>
+        </div>
+        <p class="contact-note">Site de présentation en cours d’évolution · Aucun formulaire ou service de messagerie n’est activé sur cette page.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="shell footer-inner"><div class="footer-title">LA <em>TRAME</em><small>VISIONS D’UNIVERS</small></div><div><p>Un projet narratif et graphique indépendant.</p><p class="footer-small">© <span id="current-year"></span> — Tous droits réservés sur les textes et visuels.</p></div><a href="#haut" class="to-top">Retour en haut ↑</a></div></footer>
+
+  <dialog id="universe-dialog" class="detail-dialog"><button class="dialog-close" type="button" aria-label="Fermer">×</button><div id="dialog-content"></div></dialog>
+  <dialog id="lightbox" class="lightbox"><button class="dialog-close" type="button" aria-label="Fermer">×</button><figure><img id="lightbox-image" alt=""><figcaption id="lightbox-caption"></figcaption></figure></dialog>
+</body>
+</html>
