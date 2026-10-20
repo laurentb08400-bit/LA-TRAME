@@ -2,9 +2,9 @@
   "site": {
     "titre": "LA TRAME",
     "sousTitre": "Visions d’Univers",
-    "signature": "Un atelier d’univers en devenir",
-    "accroche": "Les mondes prennent forme, page après page.",
-    "introduction": "La Trame ouvre les portes de ses univers : récits, bandes dessinées, recherches graphiques et étapes de création. Découvrez dès aujourd’hui les premiers extraits de Vision d’Univers — La Griffe Noire, puis suivez les nouvelles publications au fil de l’écriture.",
+    "signature": "Roman · Bande dessinée · Mondes en création",
+    "accroche": "Entrez dans les récits de La Trame.",
+    "introduction": "La Trame ouvre progressivement son univers littéraire et graphique. Commencez par deux extraits canoniques de Vision d’Univers — La Griffe Noire, découvrez les premiers lieux et personnages dans l’encyclopédie, puis suivez les nouveautés du chantier dans le journal de création.",
     "imageAccueil": ""
   },
   "univers": [
@@ -12,15 +12,96 @@
       "id": "la-griffe-noire",
       "titre": "La Griffe Noire",
       "surtitre": "VISION D’UNIVERS · TOME 1",
-      "resume": "Premier tome de Vision d’Univers, La Griffe Noire prend forme à travers un roman et son adaptation en bande dessinée. Le projet conserve ses textes fondateurs et évolue au fil des versions validées.",
-      "presentation": "Vaisseau des origines, La Griffe Noire s’amarre à L’Arche, cité orbitale héritée d’une civilisation ancienne. Les premiers extraits de l’édition canonique V0.16 sont accessibles dans la bibliothèque. Une adaptation en bande dessinée est également en développement.",
+      "resume": "Un croiseur natif de 1 850 mètres, une mégastation aux origines mystérieuses et un équipage à la veille d’une nouvelle mission. Découvrez les premiers extraits de La Griffe Noire, tome 1 de Vision d’Univers.",
+      "presentation": "La Griffe Noire s’amarre à L’Arche, vaste station orbitale près d’Eliama dans le système de Cronn. Le capitaine Liam Oser, Avrose Perll et le psypilote Orann Vorlag gagnent les quais. Dans la bibliothèque, le prologue et la scène d’arrivée reprennent fidèlement la V0.16 canonique du roman (17 août 2026). Une adaptation en bande dessinée est en préparation.",
       "image": "",
       "etat": "Roman en cours · Bande dessinée en développement",
       "publie": true
     }
   ],
   "visuels": [],
-  "encyclopedie": [],
+  "encyclopedie": [
+    {
+      "id": "arche",
+      "titre": "L’Arche",
+      "categorie": "lieu",
+      "univers": "la-griffe-noire",
+      "resume": "Station orbitale près d’Eliama, troisième planète terraformée du système de Cronn.",
+      "description": "Cité immense, L’Arche associe une architecture d’origine inconnue à des quartiers humains accumulés au fil des siècles. Des pontons, des dômes végétaux et des puits d’antigrav rythment ce carrefour de voyageurs. Une des quatre grandes structures découvertes par les explorateurs humains.",
+      "image": "",
+      "publie": true
+    },
+    {
+      "id": "eliama",
+      "titre": "Eliama",
+      "categorie": "lieu",
+      "univers": "la-griffe-noire",
+      "resume": "Troisième planète terraformée du système de Cronn, au voisinage de L’Arche.",
+      "description": "Depuis les baies extérieures de la station, Eliama se révèle à travers ses océans sombres, ses continents neufs et ses nappes de nuages. Le monde apparaît dans la scène d’arrivée de La Griffe Noire.",
+      "image": "",
+      "publie": true
+    },
+    {
+      "id": "griffe-vaisseau",
+      "titre": "La Griffe Noire",
+      "categorie": "repere",
+      "univers": "la-griffe-noire",
+      "resume": "Croiseur amiral d’origine native, long d’environ 1 850 mètres.",
+      "description": "Ce vaisseau fait partie des bâtiments originels trouvés par l’humanité. Son revêtement de carbogel noir recouvre un squelette de metalovlar. La flotte humaine sait le réparer sans avoir entièrement reproduit sa technologie ; ses batteries à plasma et à photons témoignent de sa puissance.",
+      "image": "",
+      "publie": true
+    },
+    {
+      "id": "psypilotes",
+      "titre": "Les psypilotes",
+      "categorie": "repere",
+      "univers": "la-griffe-noire",
+      "resume": "Navigateurs capables d’établir un lien mental profond avec l’intelligence de certains vaisseaux.",
+      "description": "Les premiers vaisseaux natifs ne répondaient ni aux codes ni aux commandes ordinaires. Ils attendaient un esprit capable de nouer un lien avec l’intelligence du bâtiment. Les ingénieurs ont ensuite adapté cette découverte à la navigation humaine.",
+      "image": "",
+      "publie": true
+    },
+    {
+      "id": "quatre-structures",
+      "titre": "Les quatre grandes structures",
+      "categorie": "repere",
+      "univers": "la-griffe-noire",
+      "resume": "L’Arche, la Main, la Tour et le Cœur : quatre constructions anciennes.",
+      "description": "Ces quatre structures parentes furent découvertes en fonctionnement aux limites de l’espace humain exploré. Leur immensité et leurs mécanismes dépassent encore la compréhension complète de l’Union.",
+      "image": "",
+      "publie": true
+    },
+    {
+      "id": "oser",
+      "titre": "Liam Oser",
+      "categorie": "personnage",
+      "univers": "la-griffe-noire",
+      "resume": "Capitaine de La Griffe Noire, responsable de son équipage.",
+      "description": "À l’arrivée sur L’Arche, Oser observe les quais avec l’attention d’un tacticien. Il fixe les rendez-vous de son second et charge Orann Vorlag de trouver un deuxième psypilote avant le prochain départ.",
+      "image": "",
+      "publie": true
+    },
+    {
+      "id": "perll",
+      "titre": "Avrose Perll",
+      "categorie": "personnage",
+      "univers": "la-griffe-noire",
+      "resume": "Second de La Griffe Noire, vétéran doté de nombreux perfectionnements corporels.",
+      "description": "Perll accompagne Oser sur le quai. Sous son manteau de svorack, son sidrill dessine une silhouette largement renforcée. Des recrues le surnomment parfois « Humanbot », mais son expérience au combat inspire le respect.",
+      "image": "",
+      "publie": true
+    },
+    {
+      "id": "vorlag",
+      "titre": "Orann Vorlag",
+      "categorie": "personnage",
+      "univers": "la-griffe-noire",
+      "resume": "Psypilote vétéran de La Griffe Noire.",
+      "description": "Vorlag accompagne Oser et Perll lors de leur débarquement sur L’Arche. Chargé de recruter un second psypilote, il gagne les niveaux administratifs de la station avec son calme habituel.",
+      "image": "",
+      "publie": true
+    }
+  ],
   "extraits": [
     {
       "id": "prologue-un",
@@ -40,6 +121,14 @@
     }
   ],
   "journal": [
+    {
+      "id": "atelier-encyclopedie-20261020",
+      "date": "2026-10-20",
+      "titre": "Les premiers repères de l’univers sont en ligne",
+      "type": "ENCYCLOPÉDIE",
+      "texte": "Huit fiches présentent L’Arche, Eliama, La Griffe Noire, les psypilotes, les quatre grandes structures et trois membres de l’équipage. Elles sont fondées sur la scène d’arrivée de la V0.16 canonique, sans divulguer la suite de l’intrigue.",
+      "publie": true
+    },
     {
       "id": "publication-inaugurale",
       "date": "2026-10-20",
