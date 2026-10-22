@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Atlas illustré de La Griffe Noire, dans La Trame — Visions d’Univers.">
+<title>La Griffe Noire — Atlas visuel | La Trame</title>
+<style>
+:root{color-scheme:dark;--bg:#080d10;--surface:#10191e;--ink:#f4f0e9;--muted:#abc0c1;--line:#354a4d;--gold:#d7b28a;--cyan:#9dd0da}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 85% 3%,#173042 0%,transparent 40%),var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--gold)}button,input{font:inherit}button{cursor:pointer}:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+header{border-bottom:1px solid var(--line);background:rgba(5,10,14,.94);position:sticky;top:0;z-index:10}
+.nav{max-width:1400px;margin:auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;padding:17px clamp(18px,4vw,60px)}
+.brand{font:600 14px Georgia,serif;letter-spacing:.15em;color:var(--ink);text-decoration:none}
+.links{display:flex;flex-wrap:wrap;gap:15px}.links a{text-decoration:none;font-size:12px;color:var(--muted)}.links a:hover{color:var(--gold)}
+.hero,.content,footer>div{max-width:1400px;margin:auto;padding-inline:clamp(18px,4vw,60px)}
+.hero{padding-top:75px;padding-bottom:52px;min-height:300px}.eyebrow{color:var(--cyan);font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+.hero h1{font:normal clamp(52px,7vw,103px)/1 Georgia,serif;letter-spacing:-.06em;margin:17px 0 12px}
+.hero h1 em{font-style:italic;color:var(--gold)}.hero p{max-width:900px;line-height:1.9;color:#c4d0cc}
+.important{border-left:2px solid var(--gold);padding:8px 0 8px 18px;margin-top:22px;color:#e3c9a5;font-size:13px}
+.toolbar{display:flex;gap:20px;justify-content:space-between;align-items:center;flex-wrap:wrap;padding:24px 0 18px;border-top:1px solid var(--line)}
+.filters{display:flex;gap:8px;flex-wrap:wrap}.filters button{background:#131e24;color:#c3d0cc;border:1px solid var(--line);padding:11px 13px;font-size:12px}.filters button[aria-pressed=true]{background:var(--gold);color:#111;border-color:var(--gold)}
+#search{min-width:210px;flex:0 1 270px;background:#101920;border:1px solid #547078;color:#fff;padding:12px 14px}
+.count{font-size:12px;color:var(--cyan);padding-bottom:20px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:19px;padding-bottom:80px}
+.card{display:flex;flex-direction:column;text-align:left;padding:0;border:1px solid var(--line);background:linear-gradient(140deg,#14232b,#0d1519);color:inherit;min-width:0;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-3px);border-color:var(--gold)}
+.cover{width:100%;aspect-ratio:16/10;overflow:hidden;background:#0e1a20;position:relative}.cover img{width:100%;height:100%;display:block;object-fit:cover}.kind{position:absolute;bottom:10px;left:12px;font-size:10px;letter-spacing:.08em;background:#0c1720dd;padding:7px 11px;border:1px solid #ffffff24}
+.info{padding:20px 22px 24px}.info small{color:var(--cyan);font-size:10px;letter-spacing:.07em}.info strong{font:normal 25px/1.15 Georgia,serif;display:block;margin:9px 0}.info p{font-size:12px;color:var(--muted);line-height:1.8;min-height:45px}.info span{font-size:11px;color:var(--gold)}
+footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);font-size:12px;line-height:1.8}
+.viewer{display:none;position:fixed;inset:0;background:#030609f3;z-index:50;padding:3vh 3vw;align-items:center;justify-content:center}.viewer[aria-hidden=false]{display:flex}
+.viewer-box{position:relative;border:1px solid #7b674e;background:#0a1117;width:min(1500px,97vw);height:min(92vh,980px);display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,320px)}
+.viewer-media{min-height:0;display:flex;align-items:center;justify-content:center;overflow:auto;background:#05090c}.viewer-media img{max-width:100%;max-height:100%;object-fit:contain}
+.viewer-info{padding:55px 26px 30px;overflow:auto}.viewer-info h2{font:normal 32px Georgia,serif}.viewer-info p{line-height:1.8;color:var(--muted);font-size:13px}.viewer-info a{font-size:13px}
+.close{position:absolute;right:11px;top:10px;background:#22333a;border:1px solid #526c74;color:white;font-size:24px;z-index:2;padding:5px 14px}
+@media(max-width:940px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.viewer-box{grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) auto}.viewer-info{max-height:210px;padding:15px 22px}.viewer-info h2{margin:8px 0}.hero{padding-top:50px;min-height:0}}
+@media(max-width:620px){.grid{grid-template-columns:1fr}.toolbar{align-items:stretch}#search{flex:1 1 100%}.nav{align-items:flex-start}.hero h1{font-size:56px}.viewer{padding:6px}.viewer-info{max-height:190px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important}}
+</style></head><body>
+<header><nav class="nav" aria-label="Navigation de l’atlas"><a class="brand" href="../">LA TRAME · VISIONS D’UNIVERS</a><div class="links"><a href="../">Accueil</a><a href="../personnages/">Personnages</a><a href="../arche/">L’Arche</a><a href="../griffe-noire/">La Griffe Noire</a></div></nav></header>
+<section class="hero"><span class="eyebrow">Atlas illustré / Croiseur amiral</span><h1>La Griffe Noire</h1><p>Un croiseur natif de 1 850 mètres, forteresse sombre capable de traverser l’espace. Sa silhouette officielle est établie par les planches de la bande dessinée ; les autres illustrations témoignent des recherches de design.</p><div class="important">Attention : les vues de recherche ne sont pas des feuilles de modèle définitives du croiseur. Elles sont explicitement séparées de la planche canonique, pour préserver la continuité du récit.</div></section>
+<main class="content"><section class="toolbar" aria-label="Explorer les images"><div id="filters" class="filters" aria-label="Filtres des illustrations"></div><input id="search" type="search" placeholder="Rechercher un lieu, une vue…" aria-label="Rechercher une illustration"></section><p id="count" class="count" aria-live="polite"></p><section class="grid" id="grid" aria-label="Illustrations de La Griffe Noire"></section></main>
+<footer><div>© Laurent B. 2026 — La Trame. Sources du fonds de conception personnel. Les études et recherches sont présentées en tant que telles ; seule la planche désignée comme canonique fixe l’apparence officielle. Les documents de récit avancé ne sont pas exposés ici.</div></footer>
+<div id="viewer" class="viewer" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Illustration complète"><div class="viewer-box"><button id="close" class="close" aria-label="Fermer">×</button><div class="viewer-media"><img id="full" alt=""></div><div class="viewer-info"><span class="eyebrow" id="full-cat"></span><h2 id="full-title"></h2><p id="full-desc"></p><p id="full-status"></p><a id="full-link" target="_blank" rel="noopener noreferrer">Ouvrir l’image seule ↗</a></div></div></div>
+<script src="assets/planche-01.js"></script>
+<script src="assets/planche-02.js"></script>
+<script src="assets/planche-03.js"></script>
+<script src="assets/planche-04.js"></script>
+<script src="assets/planche-05.js"></script>
+<script>
+'use strict';
+const ITEMS=[{"id":"g00","title":"La Griffe Noire à L’Arche","category":"Référence canonique","note":"Planche 01 : présentation du croiseur à l’échelle de la mégastation.","canon":true,"src":"../assets/images/planche-01-l-arche.png"},{"id":"g01","title":"Croiseur sombre près d’une station","category":"Études de silhouette","note":"Recherche de cadrage et de masse ; n’établit pas le profil canonique.","canon":false,"src":null},{"id":"g02","title":"Vaisseau capital en orbite","category":"Études de silhouette","note":"Étude de silhouette sombre ; forme non validée comme La Griffe Noire.","canon":false,"src":null},{"id":"g03","title":"Long vaisseau devant une planète","category":"Études de silhouette","note":"Recherche de proportions et d’échelle ; forme non validée.","canon":false,"src":null},{"id":"g04","title":"Détail de coque de vaisseau","category":"Matières & structures","note":"Étude de texture et de structure ; référence exploratoire.","canon":false,"src":null},{"id":"g05","title":"Commandement à bord","category":"Espaces intérieurs","note":"Recherche de décor intérieur ; composition non certifiée comme planche canonique.","canon":false,"src":null}];
+const $=id=>document.getElementById(id);
+const MEDIA=window.LA_TRAME_ATLAS_IMAGES||{};
+let cat='Toutes',previous=null;
+const plain=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+function node(tag,cl,txt){const e=document.createElement(tag);if(cl)e.className=cl;if(txt!==undefined)e.textContent=txt;return e}
+function resolve(it){return it.src||MEDIA[it.id]||''}
+const cats=['Toutes',...new Set(ITEMS.map(i=>i.category))];
+for(const c of cats){const b=node('button','',c);b.type='button';b.setAttribute('aria-pressed',String(c===cat));b.addEventListener('click',()=>{cat=c;for(const p of $('filters').children)p.setAttribute('aria-pressed',String(p===b));render()});$('filters').append(b)}
+function openItem(it){const url=resolve(it);if(!url)return;previous=document.activeElement;$('full').src=url;$('full').alt='Image complète : '+it.title;$('full-cat').textContent=it.category;$('full-title').textContent=it.title;$('full-desc').textContent=it.note;$('full-status').textContent=it.canon?'Document canonique validé':'Archive visuelle de recherche — pas de validation canonique implicite.';$('full-link').href=url;$('viewer').setAttribute('aria-hidden','false');document.body.style.overflow='hidden';$('close').focus()}
+function closeViewer(){if($('viewer').getAttribute('aria-hidden')==='true')return;$('viewer').setAttribute('aria-hidden','true');$('full').removeAttribute('src');document.body.style.overflow='';if(previous?.focus)previous.focus()}
+function makeCard(it){const b=node('button','card');b.type='button';b.setAttribute('aria-label','Voir '+it.title);const cover=node('div','cover'),src=resolve(it);const image=node('img');image.src=src;image.alt='';image.loading='lazy';cover.append(image,node('span','kind',it.canon?'CANON · PLANCHE VALIDÉE':'ÉTUDE · ARCHIVE DE TRAVAIL'));const info=node('div','info');info.append(node('small','',it.category),node('strong','',it.title),node('p','',it.note),node('span','', 'Voir la planche complète ↗'));b.append(cover,info);b.addEventListener('click',()=>openItem(it));return b}
+function render(){const q=plain($('search').value.trim());const view=ITEMS.filter(i=>(cat==='Toutes'||i.category===cat)&&plain([i.title,i.category,i.note].join(' ')).includes(q));$('count').textContent=view.length+' illustration'+(view.length>1?'s':'')+' affichée'+(view.length>1?'s':'');$('grid').replaceChildren(...(view.length?view.map(makeCard):[node('p','', 'Aucune illustration ne correspond aux filtres.')]))}
+$('search').addEventListener('input',render);$('close').addEventListener('click',closeViewer);$('viewer').addEventListener('click',e=>{if(e.target===$('viewer'))closeViewer()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeViewer();if(e.key==='Tab'&&$('viewer').getAttribute('aria-hidden')==='false'){const a=$('full-link'),b=$('close');if(e.shiftKey&&document.activeElement===b){e.preventDefault();a.focus()}else if(!e.shiftKey&&document.activeElement===a){e.preventDefault();b.focus()}}});render();
+</script></body></html>
