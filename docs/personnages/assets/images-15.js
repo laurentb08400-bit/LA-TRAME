@@ -1,1 +1,1 @@
-window.ATLAS_IMAGES=Object.assign(window.ATLAS_IMAGES||{},{"moller-hang":"assets/moller-hang.png","alcoy-varenne":"assets/alcoy-varenne.png"});
+window.ATLAS_IMAGES=Object.assign(window.ATLAS_IMAGES||{},{"moller-hang":"assets/moller-hang.jpg","alcoy-varenne":"assets/alcoy-varenne.jpg"});
